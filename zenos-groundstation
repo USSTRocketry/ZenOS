@@ -1,0 +1,5 @@
+BUILD_DIR="./build"
+cp ./conf/bblayers.conf $BUILD_DIR/conf/
+
+source poky/oe-init-build-env
+
