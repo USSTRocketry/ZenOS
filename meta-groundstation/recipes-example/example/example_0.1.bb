@@ -2,6 +2,9 @@ SUMMARY = "bitbake-layers recipe"
 DESCRIPTION = "Recipe created by bitbake-layers"
 LICENSE = "MIT"
 
+# No runtime package is produced
+PACKAGES = ""
+
 python do_display_banner() {
     bb.plain("***********************************************");
     bb.plain("*                                             *");
