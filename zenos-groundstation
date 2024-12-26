@@ -1,5 +1,13 @@
+#!/bin/sh
+
+
+export ZENOS_PROJ_DIR=$(pwd)
 BUILD_DIR="./build"
 cp ./conf/bblayers.conf $BUILD_DIR/conf/
 
 source poky/oe-init-build-env
+
+export BB_ENV_PASSTHROUGH_ADDITIONS="$BB_ENV_PASSTHROUGH_ADDITIONS ZENOS_PROJ_DIR"
+
+echo "ZENOS_PROJ_DIR is set to: $ZENOS_PROJ_DIR"
 
