@@ -8,13 +8,13 @@ EXTRA_USERS_PARAMS = "usermod -P /etc/shadow AV@USST pi;"
 
 
 # Use systemd as the init manager
-DISTRO_FEATURES_append = " systemd"
+DISTRO_FEATURES:append = " systemd"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_initscripts = ""
 
 # Add RAUC to the image
-IMAGE_INSTALL_append = " rauc"
+IMAGE_INSTALL:append = " rauc"
 
 # Configure image output formats
 IMAGE_FSTYPES = "tar.bz2 ext4 wic.bz2 wic.bmap"
