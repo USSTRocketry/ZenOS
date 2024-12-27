@@ -9,4 +9,5 @@ IMAGE_INSTALL:append = " rauc \
                         "
 
 IMAGE_INSTALL += " nano vim python3"
+IMAGE_INSTALL += " python3-pyqt5"
 
