@@ -19,5 +19,5 @@ if mount | grep -q "$1"; then
 fi
 
 # Write the image
-bzcat tmp/deploy/images/raspberrypi3/groundstation-image-raspberrypi3.rootfs.wic.bz2 | sudo dd of="$1" bs=4M status=progress conv=fsync
+bzcat tmp/deploy/images/raspberrypi3-64/groundstation-image-raspberrypi3-64.rootfs.wic.bz2 | sudo dd of="$1" bs=4M status=progress conv=fsync
 
