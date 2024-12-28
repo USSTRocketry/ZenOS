@@ -4,11 +4,12 @@ LICENSE = "MIT"
 IMAGE_INSTALL:append = " rauc \
                         wayland \
                         weston \
-                        networkmanager \
                         dbus \
                         "
+#networkmanager 
+#networkmanager-wifi
 
-IMAGE_INSTALL += " linux-firmware-bcm43430"
+IMAGE_INSTALL += " linux-firmware-rpidistro-bcm43430"
 IMAGE_INSTALL += " nano"
 IMAGE_INSTALL += " vim"
 IMAGE_INSTALL += " python3"
