@@ -1,3 +1,3 @@
-require recipes-core/images/core-image-base.bb
+inherit core-image
 
 require groundstation.bb
