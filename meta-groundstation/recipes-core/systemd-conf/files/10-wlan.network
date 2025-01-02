@@ -3,7 +3,10 @@ Name=wlan*
 KernelCommandLine=!nfsroot
 
 [Network]
+Address=192.168.1.100/24
+Gateway=192.168.1.1
+DNS=8.8.8.8
 DHCP=ipv4
 
 [DHCPv4]
-UseHostname=false
+UseHostname=true
