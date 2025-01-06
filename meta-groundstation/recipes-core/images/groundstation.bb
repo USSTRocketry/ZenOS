@@ -28,3 +28,7 @@ IMAGE_INSTALL += " wpa-supplicant"
 IMAGE_INSTALL += " iw"
 IMAGE_INSTALL += " dhcpcd"
 IMAGE_INSTALL += " iptables"
+IMAGE_INSTALL += " redis"
+IMAGE_INSTALL += " python3-redis"
+IMAGE_INSTALL += " telemetry"
+
