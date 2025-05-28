@@ -15,9 +15,13 @@ fi
 # Check if the device is mounted
 if mount | grep -q "$1"; then
     echo "Error: Target device '$1' is currently mounted."
-    exit 1
+    echo "Unmounting..."
+    sudo umount $1
 fi
 
 # Write the image
+echo "Burning image on device..."
 bzcat tmp/deploy/images/raspberrypi3-64/groundstation-image-raspberrypi3-64.rootfs.wic.bz2 | sudo dd of="$1" bs=4M status=progress conv=fsync
+sync
+echo Done
 

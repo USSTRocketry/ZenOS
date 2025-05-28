@@ -15,6 +15,9 @@ S = "${WORKDIR}/git"
 RDEPENDS_${PN} = "python3 \
                   python3-pyqt5 \
                   pyqtgraph \
+                  python3-matplotlib \
+                  python3-circuitpython-rfm9x \
+                  
                   python3-redis"
 
 inherit systemd
