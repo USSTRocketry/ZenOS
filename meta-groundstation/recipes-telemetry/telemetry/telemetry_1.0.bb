@@ -17,8 +17,8 @@ RDEPENDS_${PN} = "python3 \
                   pyqtgraph \
                   python3-matplotlib \
                   python3-circuitpython-rfm9x \
-                  
-                  python3-redis"
+                  python3-redis \
+                  redistimeseries"
 
 inherit systemd
 SYSTEMD_SERVICE:${PN}:append = " telemetry.service "
@@ -27,11 +27,22 @@ do_install() {
     install -d ${D}${bindir}/telemetry
     cp -r ${S}/. ${D}${bindir}/telemetry/
 
-    # Install the service file
+    # remove git files (in case devtool was used)
+    rm -rf ${D}${bindir}/telemetry/.git
+
+    # Make telemetry-ctl.py executable
+    chmod +x ${D}${bindir}/telemetry/telemetry-ctl.py
+
+    # install a symlink in ${bindir} to make it runnable globally
+    ln -sf ${bindir}/telemetry/telemetry-ctl.py ${D}${bindir}/telemetry-ctl
+
+    # Install the systemd service file
     install -d ${D}/${systemd_unitdir}/system
     install -m 0644 ${WORKDIR}/telemetry.service ${D}/${systemd_unitdir}/system
 }
 
-FILES:${PN} = "${bindir}/telemetry/* \
-               ${systemd_unitdir}/system/telemetry.service \
-               ${bindir}/telemetry/"
+
+FILES:${PN} =  "${bindir}/telemetry/* \
+                ${bindir}/telemetry-ctl \
+                ${systemd_unitdir}/system/telemetry.service \
+                ${bindir}/telemetry/"

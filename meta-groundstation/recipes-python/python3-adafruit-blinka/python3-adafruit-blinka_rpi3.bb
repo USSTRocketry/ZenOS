@@ -17,11 +17,11 @@ DEPENDS += "python3-setuptools-scm-native python3"
 RDEPENDS:${PN} += " \
     libgpiod \
     python3-adafruit-platformdetect \
+    python3-adafruit-circuitpython-typing \
     python3-core \
 "
 
-# Optional, if you need it:
-# RDEPENDS:${PN} += "python3-adafruit-pureio"
+RDEPENDS:${PN} += " python3-adafruit-pureio"
 
 RDEPENDS:${PN}:append:rpi = " rpi-gpio"
 

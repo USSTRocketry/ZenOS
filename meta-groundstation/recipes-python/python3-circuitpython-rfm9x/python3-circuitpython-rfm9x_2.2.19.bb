@@ -20,6 +20,7 @@ RDEPENDS:${PN} += "python3-core python3-adafruit-blinka"
 do_install() {
     install -d ${D}${PYTHON_SITEPACKAGES_DIR}/adafruit_rfm9x
     cp -r ${S}/*.py ${D}${PYTHON_SITEPACKAGES_DIR}/adafruit_rfm9x/
+    echo "# RFM9x Package" > ${D}${PYTHON_SITEPACKAGES_DIR}/adafruit_rfm9x/__init__.py
 }
 
 FILES:${PN} += "${PYTHON_SITEPACKAGES_DIR}"
